@@ -15,24 +15,22 @@
     <title>Run</title>
   </head>
   <body>
-    <div class="header">
+    <header>
       <div class="text">
-        <h1>Run</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id eos illum
-          dolorem iusto aperiam officia officiis quisquam repudiandae rerum
-          reprehenderit.
-        </p>
-        <button>get started</button>
+        <div>
+          <h1>Run</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id eos
+            illum dolorem iusto aperiam officia officiis quisquam repudiandae
+            rerum reprehenderit.
+          </p>
+          <a href="" class="button">learn more</a>
+        </div>
       </div>
-      <div class="header-img">
-        <img src="/img/banner.jpg" alt="photo de terrain de course" />
-      </div>
-    </div>
+      <div class="header-img"></div>
+    </header>
     <div class="main">
-      <div class="main-img">
-        <img src="/img/img-left.jpg" alt="photo d'un coureur en fôret" />
-      </div>
+      <div class="main-img"></div>
       <div class="text">
         <h2>Lorem, ipsum dolor</h2>
         <p>
@@ -41,7 +39,7 @@
           laudantium itaque repudiandae velit suscipit iusto minus culpa
           possimus sequi.
         </p>
-        <button>learn more</button>
+        <a href="" class="button">learn more</a>
       </div>
     </div>
     <div class="footer">
@@ -53,39 +51,48 @@
           laborum quo repudiandae vel suscipit fuga maiores quae itaque nostrum.
           Nostrum.
         </p>
-        <button>learn more</button>
+        <a href="" class="button">learn more</a>
       </div>
-      <div class="footer-img">
-        <img
-          src="/img/img-right.jpg"
-          alt="photo d'un coureur sous la tour Eiffel"
-        />
-      </div>
+      <div class="footer-img"></div>
     </div>
     <div class="formulaire">
       <h2>Get in touch</h2>
       <form action="" method="get">
-        <div class="name">
-          <label for="name">Name</label> <input type="text" id="name" />
-        </div>
-        <div class="email">
-          <label for="email">Email</label>
+        <div class="grid-form">
+          <div class="name">
+            <label for="name">Name</label> <input type="text" id="name" />
+          </div>
+          <div class="email">
+            <label for="email">Email</label>
 
-          <input type="text" id="email" />
+            <input type="text" id="email" />
+          </div>
+          <div class="message">
+            <label for="message">Message</label>
+            <textarea name="" id="message"></textarea>
+          </div>
         </div>
-        <div class="message">
-          <label for="message">Message</label>
-          <textarea name="" id="message" cols="30" rows="10"></textarea>
-        </div>
-        <input type="submit" value="send message" />
+        <input type="submit" class="button" value="send message" />
       </form>
     </div>
     <div class="social">
-      <button><i class="fa-brands fa-twitter"></i></button>
-      <button><i class="fa-brands fa-facebook-f"></i></button>
-      <button><i class="fa-brands fa-instagram"></i></button>
-      <button><i class="fa-brands fa-linkedin-in"></i></button>
-      <button><i class="fa-regular fa-envelope"></i></button>
+      <ul>
+        <li>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="fa-regular fa-envelope"></i></a>
+        </li>
+      </ul>
     </div>
   </body>
 </html>

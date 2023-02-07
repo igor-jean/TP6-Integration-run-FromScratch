@@ -1,24 +1,30 @@
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
+  outline: none;
 }
 body {
   font-family: sans-serif;
 }
-button {
-  padding: 15px 30px;
+li {
+  list-style: none;
+}
+.button {
+  display: inline-block;
+  padding: 13px 30px;
   border-radius: 50px;
   text-transform: uppercase;
-  outline: none;
   border: 1px solid rgb(204, 204, 204);
   background: white;
-  cursor: pointer;
   font-size: 1rem;
+  text-decoration: none;
+  color: black;
 }
-button:hover {
+.button:hover {
   border: 1px solid rgb(146, 232, 238);
   color: rgb(146, 232, 238);
+  cursor: pointer;
 }
 h1 {
   font-size: 3rem;
@@ -34,26 +40,23 @@ p {
   line-height: 200%;
   margin: 30px 0;
 }
-.header {
+header {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 748px;
-  align-items: center;
+  min-height: 100vh;
 }
 .text {
   padding: 0px 50px;
+  margin: auto;
 }
-.header-img img {
-  width: 100%;
-  height: 750px;
-  object-fit: cover;
-  object-position: right;
+.header-img {
+  background: url(/img/banner.jpg) right/cover;
 }
 .main {
   display: grid;
   grid-template-columns: 30% 70%;
-  grid-template-rows: 498px;
-  align-items: center;
+  min-height: 400px;
+
   position: relative;
 }
 .main::before {
@@ -64,15 +67,13 @@ p {
   position: absolute;
   top: 0;
 }
-.main-img img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
+.main-img {
+  background: url(/img/img-left.jpg) center/cover;
 }
 .footer {
   display: grid;
   grid-template-columns: 70% 30%;
-  align-items: center;
+  min-height: 400px;
   position: relative;
 }
 .footer::before {
@@ -83,19 +84,17 @@ p {
   position: absolute;
   top: 0;
 }
-.footer-img img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
+.footer-img {
+  background: url(/img/img-right.jpg) center/cover;
 }
 .formulaire {
   text-align: center;
   position: relative;
+  padding: 60px 0;
 }
 .formulaire h2 {
   font-size: 2rem;
   font-weight: normal;
-  padding: 60px 0 30px;
 }
 .formulaire::after {
   content: "";
@@ -103,50 +102,37 @@ p {
   height: 1px;
   background-color: rgb(187, 187, 187);
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   transform: translateX(-50%);
 }
-form {
-  margin: 0 auto;
+.grid-form {
+  margin: 30px auto 30px;
   width: 40%;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 200px;
-  gap: 10px;
   grid-template-areas:
     "na em"
-    "me me"
-    "bu bu";
+    "me me";
 }
 input[type="text"] {
   padding: 10px 15px;
   border: 1px solid rgb(187, 187, 187);
   border-radius: 5px;
-  width: 80%;
+  width: 100%;
 }
 textarea {
   padding: 10px 15px;
   border: 1px solid rgb(187, 187, 187);
   border-radius: 5px;
   resize: none;
+  width: 100%;
+  height: 400px;
 }
-input[type="submit"] {
-  padding: 15px 30px;
-  border-radius: 30px;
-  text-transform: uppercase;
-  outline: none;
-  border: 1px solid rgb(187, 187, 187);
-  background: white;
-  cursor: pointer;
-  font-size: 1rem;
-  margin: 30px auto 60px;
-  grid-area: bu;
-}
-input[type="submit"]:hover {
+input[type="text"]:focus,
+textarea:focus {
   border: 1px solid rgb(146, 232, 238);
-  color: rgb(146, 232, 238);
-  cursor: pointer;
 }
 label {
   padding: 20px 0;
@@ -156,85 +142,67 @@ label {
   grid-area: na;
   display: flex;
   flex-direction: column;
+  margin-right: 5px;
 }
 .email {
   grid-area: em;
   display: flex;
   flex-direction: column;
+  margin-left: 5px;
 }
 .message {
   grid-area: me;
   display: flex;
   flex-direction: column;
 }
-.social button {
-  display: block;
-  font-size: 1.5rem;
-  width: 80px;
-  height: 80px;
-}
+
 .social {
+  width: 50%;
+  margin: 30px auto;
+}
+.social ul {
   display: flex;
-  justify-content: space-between;
-  max-width: 800px;
-  margin: 60px auto 100px;
+  justify-content: space-around;
+}
+.social a {
+  display: inline-block;
+  display: flex;
+  height: 44px;
+  width: 44px;
+  justify-content: center;
   align-items: center;
+  font-size: 1.2rem;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 50px;
+  text-decoration: none;
+  color: black;
 }
 
-@media screen and (max-width: 1100px) {
-  .social {
-    max-width: none;
-    justify-content: space-around;
-  }
-  form {
-    width: 90%;
-  }
-}
 @media screen and (max-width: 800px) {
-  h1 {
-    margin: 20px 0 0;
+  .text {
+    margin: 50px 0;
   }
-  button {
-    margin: 0 0 50px;
-  }
-  h2 {
-    margin: 50px 0 0;
-  }
-
-  .header {
-    display: flex;
-    flex-direction: column;
-  }
-  .header img {
-    height: 500px;
-  }
-  .main {
+  header {
     display: block;
+    height: auto;
   }
-  .main-img {
-    display: none;
+  .header-img {
+    height: 50vh;
   }
+  .main,
   .footer {
     display: block;
   }
+  .main-img,
   .footer-img {
     display: none;
   }
-  .main::before {
-    top: unset;
-    bottom: 0;
-  }
+  .main::before,
   .footer::before {
     top: unset;
-    bottom: 0;
+    bottom: -20px;
   }
-  .text {
-    padding: 0 15px;
-  }
-  .social button {
-    font-size: 1rem;
-    width: 60px;
-    height: 60px;
-    padding: 5px;
+  .grid-form {
+    width: 90%;
   }
 }
