@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
+body {
+  font-family: sans-serif;
+}
+button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  outline: none;
+  border: 1px solid rgb(204, 204, 204);
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+button:hover {
+  border: 1px solid rgb(146, 232, 238);
+  color: rgb(146, 232, 238);
+}
+h1 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0px 0 30px;
+}
+p {
+  font-size: 1.3rem;
+  line-height: 200%;
+  margin: 30px 0;
+}
+.header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 748px;
+  align-items: center;
+}
+.text {
+  padding: 0px 50px;
+}
+.header-img img {
+  width: 100%;
+  height: 750px;
+  object-fit: cover;
+  object-position: right;
+}
+.main {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 498px;
+  align-items: center;
+  position: relative;
+}
+.main::before {
+  content: "";
+  background: rgb(187, 187, 187);
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.main-img img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+.footer {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+  position: relative;
+}
+.footer::before {
+  content: "";
+  background: rgb(231, 231, 231);
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+.footer-img img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+.formulaire {
+  text-align: center;
+  position: relative;
+}
+.formulaire h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  padding: 60px 0 30px;
+}
+.formulaire::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgb(187, 187, 187);
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+form {
+  margin: 0 auto;
+  width: 40%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 200px;
+  gap: 10px;
+  grid-template-areas:
+    "na em"
+    "me me"
+    "bu bu";
+}
+input[type="text"] {
+  padding: 10px 15px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 5px;
+  width: 80%;
+}
+textarea {
+  padding: 10px 15px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 5px;
+  resize: none;
+}
+input[type="submit"] {
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  outline: none;
+  border: 1px solid rgb(187, 187, 187);
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 30px auto 60px;
+  grid-area: bu;
+}
+input[type="submit"]:hover {
+  border: 1px solid rgb(146, 232, 238);
+  color: rgb(146, 232, 238);
+  cursor: pointer;
+}
+label {
+  padding: 20px 0;
+  font-size: 1.2rem;
+}
+.name {
+  grid-area: na;
+  display: flex;
+  flex-direction: column;
+}
+.email {
+  grid-area: em;
+  display: flex;
+  flex-direction: column;
+}
+.message {
+  grid-area: me;
+  display: flex;
+  flex-direction: column;
+}
+.social button {
+  display: block;
+  font-size: 1.5rem;
+  width: 80px;
+  height: 80px;
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 60px auto 100px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1100px) {
+  .social {
+    max-width: none;
+    justify-content: space-around;
+  }
+  form {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 800px) {
+  h1 {
+    margin: 20px 0 0;
+  }
+  button {
+    margin: 0 0 50px;
+  }
+  h2 {
+    margin: 50px 0 0;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
+  .header img {
+    height: 500px;
+  }
+  .main {
+    display: block;
+  }
+  .main-img {
+    display: none;
+  }
+  .footer {
+    display: block;
+  }
+  .footer-img {
+    display: none;
+  }
+  .main::before {
+    top: unset;
+    bottom: 0;
+  }
+  .footer::before {
+    top: unset;
+    bottom: 0;
+  }
+  .text {
+    padding: 0 15px;
+  }
+  .social button {
+    font-size: 1rem;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+  }
+}
